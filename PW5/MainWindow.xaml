@@ -8,7 +8,7 @@
         Title="PW5" Height="240" Width="654" ResizeMode="CanMinimize" Icon="OneDrive.ico">
     <Grid>
         <Menu VerticalAlignment="Top">
-            <MenuItem Header="Вычислить" ToolTip="Находит произведение чисел" Focusable="False"/>
+            <MenuItem Header="Вычислить" ToolTip="Находит произведение чисел" Click="Calculate_Click" Focusable="False"/>
             <MenuItem Header="Справка" ToolTip="Можно узнать информацию о программных особенностях" Click="Support_Click" Focusable="False"/>
             <MenuItem Header="О программе" ToolTip="Клавиша, показывающая окно сообщения с заданием и разработчиком программы" Click="AboutProgram_Click" Focusable="False"/>
             <MenuItem Header="Выход" Click="Exit_Click" Focusable="False"/>

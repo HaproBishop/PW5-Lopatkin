@@ -13,7 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LibPair;
-
+/// <summary>
+/// Практическая работа №5. Задание 8. Лопаткин Сергей ИСП-31.
+/// Создать класс Pair (пара четных чисел). Создать необходимые методы и свойства. 
+/// Определить метод вычисления произведения чисел. 
+/// Создать перегруженный метод для вычисления произведения 2 пар чисел - (a,b)*(c,d) = (a*c), (b*d)"
+/// </summary>
 namespace PW5
 {
     /// <summary>
@@ -28,7 +33,7 @@ namespace PW5
 
         private void Support_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Программа имеет следующие особенности:\n1) Максимальное число для ввода в полях - пятизначное\n2) Первое произведение - умножение первого числа на третье. Второе произведение - умножение второго числа на четвертое.", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);            
+            MessageBox.Show("Программа имеет следующие особенности:\n1) Необходимо вводить только четные числа для вычисления их произведения.\n2) Максимальное число для ввода в полях - пятизначное.\n3) Первое произведение - умножение первого числа на третье. Второе произведение - умножение второго числа на четвертое.", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);            
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -61,7 +66,7 @@ namespace PW5
                 FirstResult.Text = mas[0].ToString();
                 SecondResult.Text = mas[1].ToString();
             }
-            else MessageBox.Show("У вас некорректно введены значения для проведения произведения!", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
+            else MessageBox.Show("У вас некорректно введены значения для проведения произведения! Подробности об особенностях работы программы написаны в справке!", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
