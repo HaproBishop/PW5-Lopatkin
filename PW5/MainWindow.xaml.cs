@@ -57,14 +57,16 @@ namespace PW5
             bool ProveValue1 = int.TryParse(FirstValue.Text, out int value1);
             bool ProveValue2 = int.TryParse(SecondValue.Text, out int value2);
             bool ProveValue3 = int.TryParse(ThirdValue.Text, out int value3);
-            bool ProveValue4 = int.TryParse(ForthValue.Text, out int value4);
-            bool ProveValuesEven = Pair.ProveValuesEvenWithoutObject(value1, value2, value3, value4);
-            if (ProveValue1 == true && ProveValue2 == true && ProveValue3 == true && ProveValue4 == true && ProveValuesEven == true)
-            {
-                int[] mas = new int[2];
-                mas = Pair.PairCalculateWithoutObject(value1, value2, value3, value4);
-                FirstResult.Text = mas[0].ToString();
-                SecondResult.Text = mas[1].ToString();
+            bool ProveValue4 = int.TryParse(ForthValue.Text, out int value4);            
+            if (ProveValue1 == true && ProveValue2 == true && ProveValue3 == true && ProveValue4 == true)
+            {                
+                int[] mas = Pair.PairCalculateWithoutObject(value1, value2, value3, value4);
+                if (mas != null)
+                {
+                    FirstResult.Text = mas[0].ToString();
+                    SecondResult.Text = mas[1].ToString();
+                }
+                else MessageBox.Show("У вас введены нечетные(ое) числа(о)! Пожалуйства, введите значения в соответствии с требованиями!", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else MessageBox.Show("У вас некорректно введены значения для проведения произведения! Подробности об особенностях работы программы написаны в справке!", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
         }

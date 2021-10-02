@@ -14,7 +14,24 @@ namespace LibPair
         public int Value2 { get; set; }
         public int Value3 { get; set; }
         public int Value4 { get; set; }
-        public int[] Result { get; set; }               
+        public int[] Result { get; set; }
+        public Pair() { }
+        public Pair(int value1)
+        {
+            Value1 = value1;
+        }
+        public Pair(int value1, int value2)
+        {
+            Value1 = value1;
+            Value2 = value2;
+        }
+        public Pair(int value1, int value2, int value3)
+        {
+            Value1 = value1;
+            Value2 = value2;
+            Value3 = value3;
+        }
+
         public Pair(int value1, int value2, int value3, int value4)
         {
             Value1 = value1;
