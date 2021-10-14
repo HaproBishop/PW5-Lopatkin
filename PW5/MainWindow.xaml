@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PW5"
         mc:Ignorable="d"
-        Title="PW5" Height="240" Width="654" ResizeMode="CanMinimize" Icon="OneDrive.ico">
+        Title="PW5" Height="240" Width="670" ResizeMode="CanMinimize" Icon="OneDrive.ico">
     <Grid>
         <Menu VerticalAlignment="Top">
             <MenuItem Header="Вычислить" ToolTip="Находит произведение чисел" Click="Calculate_Click" Focusable="False"/>
@@ -25,7 +25,7 @@
                 <Label Content="Четвертое число -" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Вывод результата" HorizontalAlignment="Right" Height="122" Margin="0,23,10,0" VerticalAlignment="Top" Width="393">
+        <GroupBox Header="Вывод результата" HorizontalAlignment="Left" Height="122" Margin="245,23,0,0" VerticalAlignment="Top" Width="393">
             <Grid>
                 <TextBox x:Name="FirstResult" HorizontalAlignment="Left" Height="23" Margin="202,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" IsReadOnly="True" Focusable="False"/>
                 <Label Content="Первое произведение чисел -" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
