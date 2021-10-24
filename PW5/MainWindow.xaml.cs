@@ -25,12 +25,13 @@ namespace PW5
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {        
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        Pair result = new Pair();        
+        Pair pairobject = new Pair();
         private void Support_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Программа имеет следующие особенности:\n1) Необходимо вводить только четные числа для вычисления их произведения.\n2) Максимальное число для ввода в полях - пятизначное.\n3) Первое произведение - умножение первого числа на третье. Второе произведение - умножение второго числа на четвертое.", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);            
@@ -38,7 +39,7 @@ namespace PW5
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void AboutProgram_Click(object sender, RoutedEventArgs e)
@@ -57,20 +58,20 @@ namespace PW5
             bool ProveValue1 = int.TryParse(FirstValue.Text, out int value1);
             bool ProveValue2 = int.TryParse(SecondValue.Text, out int value2);
             bool ProveValue3 = int.TryParse(ThirdValue.Text, out int value3);
-            bool ProveValue4 = int.TryParse(ForthValue.Text, out int value4);            
+            bool ProveValue4 = int.TryParse(ForthValue.Text, out int value4);
             if (ProveValue1 == true && ProveValue2 == true && ProveValue3 == true && ProveValue4 == true)
             {
-                Pair result = new Pair(value1, value2);
-                Pair pairobject = new Pair(value3, value4);
-                result.PairCalculate(pairobject);
-                if (result.Result != null)
-                {
-                    FirstResult.Text = result.Result[0].ToString();
-                    SecondResult.Text = result.Result[1].ToString();                    
-                }
-                else MessageBox.Show("У вас введены нечетные(ое) числа(о)! Пожалуйства, введите значения в соответствии с требованиями!", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
+                result.AddValue(value1, value2);
+                pairobject.AddValue(value3, value4);                
+                result = result.PairCalculate(pairobject);
+                FirstResult.Text = result.Value1.ToString();
+                SecondResult.Text = result.Value2.ToString();                
             }
-            else MessageBox.Show("У вас некорректно введены значения для проведения произведения! Подробности об особенностях работы программы написаны в справке!", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
+            else MessageForUser();
+        }
+        public void MessageForUser()
+        {
+            MessageBox.Show(Pair.InfoUser, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
