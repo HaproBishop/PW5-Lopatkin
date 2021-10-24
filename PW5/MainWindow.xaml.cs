@@ -46,7 +46,12 @@ namespace PW5
         {
             MessageBox.Show("Практическая работа №5. Задание 8. Создать класс Pair (пара четных чисел). Создать необходимые методы и свойства. Определить метод вычисления произведения чисел. Создать перегруженный метод для вычисления произведения 2 пар чисел - (a,b)*(c,d) = (a*c), (b*d)", "О программе", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
+        /// <summary>
+        /// Используется для очистки результатов
+        /// при изменении начальных значений
+        /// </summary>
+        /// <param name="sender">Переменная объекта</param>
+        /// <param name="e">Переменная ивента</param>
         private void FirstValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             FirstResult.Clear();
@@ -63,12 +68,14 @@ namespace PW5
             {
                 result.AddValue(value1, value2);
                 pairobject.AddValue(value3, value4);                
-                result = result.PairCalculate(pairobject);
-                FirstResult.Text = result.Value1.ToString();
+                result = result.PairCalculate(pairobject);//Занесение результатов в объект result
+                FirstResult.Text = result.Value1.ToString();//Вывод результатов
                 SecondResult.Text = result.Value2.ToString();                
             }
             else MessageForUser();
-        }
+        }/// <summary>
+        /// Метод для сообщения пользователю об некорректности значений, введенных им
+        /// </summary>
         public void MessageForUser()
         {
             MessageBox.Show(Pair.InfoUser, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
