@@ -50,8 +50,8 @@ namespace PW5
         /// Используется для очистки результатов
         /// при изменении начальных значений
         /// </summary>
-        /// <param name="sender">Переменная объекта</param>
-        /// <param name="e">Переменная ивента</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FirstValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             FirstResult.Clear();
@@ -59,7 +59,7 @@ namespace PW5
         }
 
         private void Calculate_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             bool ProveValue1 = int.TryParse(FirstValue.Text, out int value1);
             bool ProveValue2 = int.TryParse(SecondValue.Text, out int value2);
             bool ProveValue3 = int.TryParse(ThirdValue.Text, out int value3);
@@ -67,18 +67,12 @@ namespace PW5
             if (ProveValue1 == true && ProveValue2 == true && ProveValue3 == true && ProveValue4 == true)
             {
                 result.AddValue(value1, value2);
-                pairobject.AddValue(value3, value4);                
+                pairobject.AddValue(value3, value4);
                 result = result.PairCalculate(pairobject);//Занесение результатов в объект result
                 FirstResult.Text = result.Value1.ToString();//Вывод результатов
-                SecondResult.Text = result.Value2.ToString();                
+                SecondResult.Text = result.Value2.ToString();
             }
-            else MessageForUser();
-        }/// <summary>
-        /// Метод для сообщения пользователю об некорректности значений, введенных им
-        /// </summary>
-        public void MessageForUser()
-        {
-            MessageBox.Show(Pair.InfoUser, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            else MessageBox.Show(Pair.InfoUser, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
